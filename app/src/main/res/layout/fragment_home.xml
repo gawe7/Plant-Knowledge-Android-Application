@@ -6,33 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <Button
-        android:id="@+id/home_registerbtn"
-        style="color"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/greenbg"
-        android:text="Register"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
-        app:layout_constraintStart_toEndOf="@+id/home_loginbtn"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/home_loginbtn"
-        style="color"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/greenbg"
-        android:text="Login"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/home_containnews"
         android:layout_width="342dp"
@@ -51,7 +24,7 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="31dp"
         android:background="@drawable/greenbg"
         app:layout_constraintEnd_toEndOf="parent"
