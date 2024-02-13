@@ -18,11 +18,21 @@ class Login : AppCompatActivity() {
     var userEmail: EditText? = null
     var userPass : EditText? = null
     var createUser : Button? = null
+    var forgotPass : Button?= null
     var backLogin : ImageButton? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         init()
+        // link page
+        forgotPass?.setOnClickListener{
+            var intent = Intent(this,ForgotPassword::class.java)
+            startActivity(intent)
+        }
+        createUser?.setOnClickListener{
+            var intent = Intent(this,Register::class.java)
+            startActivity(intent)
+        }
         mAuth = FirebaseAuth.getInstance()
         if (mAuth!!.currentUser != null) {
             startActivity(Intent(this@Login, Profile::class.java))
@@ -83,5 +93,6 @@ class Login : AppCompatActivity() {
         loginBtn = findViewById(R.id.login_loginBtn)
         createUser = findViewById(R.id.login_registerBtn)
         backLogin = findViewById(R.id.login_backbtn)
+        forgotPass = findViewById(R.id.login_forgotBtn)
     }
 }

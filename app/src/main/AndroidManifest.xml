@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Eartheden"
         tools:targetApi="31">
         <activity
+            android:name=".Category"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
             android:name=".Profile"
             android:exported="false" />
         <activity
