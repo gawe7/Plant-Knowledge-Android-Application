@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "69137250746",
+    "project_id": "eartheden-9818d",
+    "storage_bucket": "eartheden-9818d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69137250746:android:4654f69da20be4f5794583",
+        "android_client_info": {
+          "package_name": "com.example.eartheden"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHM7Nnjc2AEo0MstUgISmCQubGJO7F4EI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
