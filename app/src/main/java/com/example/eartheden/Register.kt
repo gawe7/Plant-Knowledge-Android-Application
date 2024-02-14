@@ -24,8 +24,10 @@ class Register : AppCompatActivity() {
         setContentView(R.layout.activity_register)
         init()
         mAuth = FirebaseAuth.getInstance()
+
         regisEmail = findViewById(R.id.register_emailtxt)
         regisPass = findViewById(R.id.register_passtxt)
+
         if (mAuth!!.currentUser != null) {
             startActivity(Intent(this@Register, MainActivity::class.java))
             finish()
