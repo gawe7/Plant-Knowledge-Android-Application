@@ -31,7 +31,8 @@ class Profile : AppCompatActivity() {
         val user = mAuth!!.currentUser
 
         // นำค่ามาใส่ลงใน TextView ที่สร้างขึ้น
-        userEmail?.text ="อีเมล : "+ user!!.email
+        userEmail?.text ="Email : "+ user!!.email
+        uidUser?.text ="User : "+ user!!.uid
 
         mAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val users = firebaseAuth.currentUser

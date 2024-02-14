@@ -21,8 +21,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="333dp"
-        android:layout_height="188dp"
+        android:layout_width="338dp"
+        android:layout_height="150dp"
         android:layout_marginTop="34dp"
         android:background="@drawable/greenbg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,20 +58,6 @@
             app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profile_usertxt" />
-
-        <TextView
-            android:id="@+id/profile_Teltxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="Tel : "
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.078"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_emailtxt" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
