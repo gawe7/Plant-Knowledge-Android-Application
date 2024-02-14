@@ -12,23 +12,26 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
 class Profile : AppCompatActivity() {
-    var mAuth: FirebaseAuth? = null
-    var mAuthListener: FirebaseAuth.AuthStateListener? = null
+    lateinit var mAuth: FirebaseAuth
+    lateinit var mAuthListener: FirebaseAuth.AuthStateListener
     private val TAG:String = "Profile"
-    var userEmail: TextView? = null
-    var uidUser : TextView? = null
-    var singout : Button? = null
-    var backRe: ImageButton? = null
+    lateinit var userEmail: TextView
+    lateinit var uidUser : TextView
+    lateinit var singout : Button
+    lateinit var backRe: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_profile)
         init()
-//ดึงค่าจาก Firebase มาใส่ใน mAuth
+
+        // ดึงค่าจาก Firebase มาใส่ใน mAuth
         mAuth = FirebaseAuth.getInstance()
         val user = mAuth!!.currentUser
-//นําค่ามาใส่ลงใน TextView ที5สร้างขึIน
-        userEmail?.text ="Email : "+ user!!.email
+
+        // นำค่ามาใส่ลงใน TextView ที่สร้างขึ้น
+        userEmail?.text ="อีเมล : "+ user!!.email
 
         mAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val users = firebaseAuth.currentUser
@@ -38,17 +41,19 @@ class Profile : AppCompatActivity() {
             }
         }
 
-// การทํางานของปุ่ ม Sign out
+        // การทำงานของปุ่ม Sign out
         singout?.setOnClickListener {
             mAuth!!.signOut()
-            Toast.makeText(this,"Signed out!", Toast.LENGTH_LONG).show()
-            Log.d(TAG, "Signed out!")
+            Toast.makeText(this,"ออกจากระบบแล้ว!", Toast.LENGTH_LONG).show()
+            Log.d(TAG, "ออกจากระบบแล้ว!")
             startActivity(Intent(this@Profile, MainActivity::class.java))
             finish()
         }
-//กรณีกดปุ่ ม Back
+
+        // กรณีกดปุ่ม Back
         backRe?.setOnClickListener { onBackPressed() }
     }
+
     override fun onStart() {
         super.onStart()
         mAuth!!.addAuthStateListener { mAuthListener }
@@ -60,6 +65,7 @@ class Profile : AppCompatActivity() {
             mAuth!!.removeAuthStateListener { mAuthListener }
         }
     }
+
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) { moveTaskToBack(true) }
         return super.onKeyDown(keyCode, event)
