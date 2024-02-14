@@ -23,23 +23,25 @@
         android:id="@+id/constraintLayout"
         android:layout_width="333dp"
         android:layout_height="188dp"
+        android:layout_marginTop="34dp"
         android:background="@drawable/greenbg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_logoimg"
         tools:context=".Profile"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="246dp">
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/profile_usertxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
             android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="User : "
             android:textColor="#000000"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.081"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,12 +49,13 @@
             android:id="@+id/profile_emailtxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="37dp"
+            android:layout_marginTop="36dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Email : "
             android:textColor="#000000"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profile_usertxt" />
 
@@ -60,12 +63,13 @@
             android:id="@+id/profile_Teltxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="37dp"
+            android:layout_marginTop="36dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Tel : "
             android:textColor="#000000"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.078"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profile_emailtxt" />
 
@@ -77,11 +81,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="160dp"
         android:background="@drawable/greenbg"
         android:text="LogOut"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -119,12 +123,11 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="92dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/news_removebg_preview"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/Profile_backbtn"

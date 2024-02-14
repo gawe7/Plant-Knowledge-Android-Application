@@ -46,7 +46,7 @@ class Profile : AppCompatActivity() {
             mAuth!!.signOut()
             Toast.makeText(this,"ออกจากระบบแล้ว!", Toast.LENGTH_LONG).show()
             Log.d(TAG, "ออกจากระบบแล้ว!")
-            startActivity(Intent(this@Profile, MainActivity::class.java))
+            startActivity(Intent(this@Profile, Login::class.java))
             finish()
         }
 

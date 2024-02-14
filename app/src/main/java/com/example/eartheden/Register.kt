@@ -20,7 +20,6 @@ class Register : AppCompatActivity() {
     var backR : ImageButton? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide()
         setContentView(R.layout.activity_register)
         init()
         mAuth = FirebaseAuth.getInstance()
@@ -29,7 +28,8 @@ class Register : AppCompatActivity() {
         regisPass = findViewById(R.id.register_passtxt)
 
         if (mAuth!!.currentUser != null) {
-            startActivity(Intent(this@Register, MainActivity::class.java))
+            startActivity(Intent(this@Register,
+                MainActivity::class.java))
             finish()
         }
         createAcc?.setOnClickListener {
@@ -38,49 +38,39 @@ class Register : AppCompatActivity() {
 
 //ทําการตรวจสอบก่อนว่ามีข้อมูลหรือไม่
             if (email.isEmpty()) {
-                Toast.makeText(
-                    this, "Please enter your email address.",
-                    Toast.LENGTH_LONG
-                ).show()
+                Toast.makeText(this,"Please enter your email address.",
+                    Toast.LENGTH_LONG).show()
                 Log.d(TAG, "Email was empty!")
                 return@setOnClickListener
             }
             if (password.isEmpty()) {
-                Toast.makeText(this, "Please enter your password.", Toast.LENGTH_LONG).show()
-                Log.d(TAG, "Password was empty!")
+                Toast.makeText(this,"Please enter your password.",Toast.LENGTH_LONG).show()
+                        Log.d(TAG, "Password was empty!")
                 return@setOnClickListener
             }
-            //กรณีที5มีข้อมูล จะทําการตรวจสอบเงื5อนไขอื5น ๆ ก่อนทําการ create user
-            mAuth!!.createUserWithEmailAndPassword(
-                email,
-                password
-            ).addOnCompleteListener { task ->
+//กรณีที5มีข้อมูล จะทําการตรวจสอบเงื5อนไขอื5น ๆ ก่อนทําการ create user
+            mAuth!!.createUserWithEmailAndPassword(email,
+                password).addOnCompleteListener { task ->
                 if (!task.isSuccessful) {
                     if (password.length < 6) { // ตรวจสอบความยาวของ password
-                        Toast.makeText(
-                            this,
-                            "Password too short! Please enter minimum 6 characters.",
-                            Toast.LENGTH_LONG
-                        ).show()
-                        Log.d(TAG, "Enter password less than 6 characters.")
+                        Toast.makeText(this,"Password too short! Please enter minimum 6 characters.",Toast.LENGTH_LONG).show()
+                                Log.d(TAG, "Enter password less than 6 characters.")
                     } else {
-                        Toast.makeText(
-                            this, "Authentication Failed: " +
-                                    task.exception!!.message, Toast.LENGTH_LONG
-                        ).show()
-                        Log.d(
-                            TAG, "Authentication Failed: " +
-                                    task.exception!!.message
-                        )
+                        Toast.makeText(this,"Authentication Failed: " +
+                                task.exception!!.message,Toast.LENGTH_LONG).show()
+                        Log.d(TAG, "Authentication Failed: " +
+                                task.exception!!.message)
                     }
                 } else {
-                    Toast.makeText(this, "Create account successfully!", Toast.LENGTH_LONG).show()
-                    Log.d(TAG, "Create account successfully!")
-                    startActivity(Intent(this@Register, MainActivity::class.java))
+                    Toast.makeText(this,"Create account successfully!",Toast.LENGTH_LONG).show()
+                            Log.d(TAG, "Create account successfully!")
+                    startActivity(Intent(this@Register,
+                        MainActivity::class.java))
                     finish()
                 }
             }
         }
+
 //กรณีกดปุ่ ม Back
         backR?.setOnClickListener { onBackPressed() }
     }
