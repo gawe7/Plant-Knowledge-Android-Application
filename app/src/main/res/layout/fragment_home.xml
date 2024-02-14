@@ -7,6 +7,44 @@
     tools:context=".ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/home_containheader"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/greenss"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".Profile"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/home_account"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/cardview_shadow_end_color"
+            android:scaleType="fitCenter"
+            android:src="@drawable/user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.979" />
+
+        <ImageButton
+            android:id="@+id/home_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="292dp"
+            android:backgroundTint="@color/cardview_shadow_end_color"
+            android:scaleType="fitCenter"
+            android:src="@drawable/news_removebg_preview"
+            app:layout_constraintEnd_toStartOf="@+id/home_account"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/home_containnews"
         android:layout_width="342dp"
         android:layout_height="193dp"
@@ -17,14 +55,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_containmenu"
         tools:context=".Profile"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints" >
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/home_containmenu"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="31dp"
         android:background="@drawable/greenbg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,6 +155,18 @@
         app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_containmenu" />
+
+    <Button
+        android:id="@+id/home_accountbtn"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="326dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="5dp"
+        android:text="profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_containnews" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

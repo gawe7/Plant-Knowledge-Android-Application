@@ -21,6 +21,7 @@ class Profile : AppCompatActivity() {
     var backRe: ImageButton? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_profile)
         init()
 //ดึงค่าจาก Firebase มาใส่ใน mAuth

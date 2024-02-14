@@ -22,6 +22,7 @@ class Login : AppCompatActivity() {
     var backLogin : ImageButton? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_login)
         init()
         // link page
@@ -84,7 +85,7 @@ class Login : AppCompatActivity() {
         createUser?.setOnClickListener {
             startActivity(Intent(this@Login,Register::class.java)) }
 //กรณีกดปุ่ ม Back
-        backLogin?.setOnClickListener { onBackPressed() }
+//        backLogin?.setOnClickListener { onBackPressed() }
     }
 
     fun init(){
@@ -92,7 +93,7 @@ class Login : AppCompatActivity() {
         userPass = findViewById(R.id.login_passwordtxt)
         loginBtn = findViewById(R.id.login_loginBtn)
         createUser = findViewById(R.id.login_registerBtn)
-        backLogin = findViewById(R.id.login_backbtn)
+//        backLogin = findViewById(R.id.login_backbtn)
         forgotPass = findViewById(R.id.login_forgotBtn)
     }
 }

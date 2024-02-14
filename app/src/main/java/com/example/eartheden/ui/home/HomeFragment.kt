@@ -6,18 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import androidx.navigation.fragment.findNavController
 import com.example.eartheden.ForgotPassword
+import com.example.eartheden.Profile
 import com.example.eartheden.R
 import com.example.eartheden.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
-
-
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -36,10 +36,16 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-//        val textView: TextView = binding.textHome
-//        homeViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
+
+        val intent = Intent(requireActivity(), Profile::class.java)
+        startActivity(intent)
+        val signoutButton = view?.findViewById<Button>(R.id.home_accountbtn)
+        signoutButton?.setOnClickListener {
+            val intent = Intent(requireActivity(), Profile::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
         return root
     }
 
