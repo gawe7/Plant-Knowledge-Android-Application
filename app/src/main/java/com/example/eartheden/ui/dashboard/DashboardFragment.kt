@@ -6,11 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.eartheden.Detail
-import com.example.eartheden.Login
 import com.example.eartheden.R
 import com.example.eartheden.databinding.FragmentDashboardBinding
 
@@ -33,7 +31,7 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 //link
-        val DetailBtn = root.findViewById<Button>(R.id.bk_img1)
+        val DetailBtn = root.findViewById<Button>(R.id.Myplant_img1)
         DetailBtn.setOnClickListener {
             val intent = Intent(requireContext(), Detail::class.java)
             startActivity(intent)

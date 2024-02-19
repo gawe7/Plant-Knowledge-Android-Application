@@ -7,7 +7,7 @@
     tools:context=".ui.dashboard.DashboardFragment">
 
     <TextView
-        android:id="@+id/Bookmark_Htxt"
+        android:id="@+id/Myplant_Htxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/bk_img1"
+        android:id="@+id/Myplant_img1"
         android:layout_width="162dp"
         android:layout_height="127dp"
         android:layout_marginTop="40dp"
@@ -29,10 +29,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Bookmark_Htxt" />
+        app:layout_constraintTop_toBottomOf="@+id/Myplant_Htxt" />
 
     <TextView
-        android:id="@+id/bk_destxt"
+        android:id="@+id/Myplant_destxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
@@ -42,6 +42,6 @@
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toEndOf="@+id/bk_img1"
-        app:layout_constraintTop_toBottomOf="@+id/Bookmark_Htxt" />
+        app:layout_constraintStart_toEndOf="@+id/Myplant_img1"
+        app:layout_constraintTop_toBottomOf="@+id/Myplant_Htxt" />
 </androidx.constraintlayout.widget.ConstraintLayout>
