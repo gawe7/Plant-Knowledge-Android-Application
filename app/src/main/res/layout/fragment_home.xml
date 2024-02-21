@@ -60,44 +60,41 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="368dp"
-        android:layout_marginEnd="237dp"
-        android:text="profile "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/profile"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="28dp"-->
+<!--        android:text="profile "-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/home_accountbtn2"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/home_containnews" />-->
 
-    <Button
-        android:id="@+id/home_accountbtn"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="326dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="5dp"
-        android:text="login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_containnews" />
+<!--    <Button-->
+<!--        android:id="@+id/home_accountbtn"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="35dp"-->
+<!--        android:layout_marginStart="326dp"-->
+<!--        android:layout_marginTop="124dp"-->
+<!--        android:layout_marginEnd="5dp"-->
+<!--        android:text="login"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/home_containnews" />-->
 
-    <Button
-        android:id="@+id/home_accountbtn2"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="326dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="5dp"
-        android:text="profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_containnews" />
+<!--    <Button-->
+<!--        android:id="@+id/home_accountbtn2"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="35dp"-->
+<!--        android:layout_marginStart="326dp"-->
+<!--        android:layout_marginTop="76dp"-->
+<!--        android:layout_marginEnd="5dp"-->
+<!--        android:text="profile"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/home_containnews" />-->
 
     <TextView
         android:id="@+id/home_newstxt"
@@ -113,5 +110,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_containheader" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_recycleview"
+        android:layout_width="367dp"
+        android:layout_height="151dp"
+        android:layout_marginTop="408dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

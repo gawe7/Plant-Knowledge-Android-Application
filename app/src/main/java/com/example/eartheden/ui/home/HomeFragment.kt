@@ -25,19 +25,19 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val signoutButton = root.findViewById<Button>(R.id.home_accountbtn)
-        signoutButton.setOnClickListener {
-            val intent = Intent(requireContext(), Login::class.java)
-            startActivity(intent)
-            requireActivity().finish()
-        }
-
-        val profile = root.findViewById<Button>(R.id.profile)
-        profile.setOnClickListener {
-            val intent = Intent(requireContext(), Profile::class.java)
-            startActivity(intent)
-            requireActivity().finish()
-        }
+//        val signoutButton = root.findViewById<Button>(R.id.home_accountbtn)
+//        signoutButton.setOnClickListener {
+//            val intent = Intent(requireContext(), Login::class.java)
+//            startActivity(intent)
+//            requireActivity().finish()
+//        }
+//
+//        val profile = root.findViewById<Button>(R.id.profile)
+//        profile.setOnClickListener {
+//            val intent = Intent(requireContext(), Profile::class.java)
+//            startActivity(intent)
+//            requireActivity().finish()
+//        }
         return root
     }
 

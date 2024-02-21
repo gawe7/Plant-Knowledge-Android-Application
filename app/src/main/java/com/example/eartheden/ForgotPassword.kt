@@ -14,10 +14,9 @@ import com.google.firebase.auth.FirebaseAuth
 class ForgotPassword : AppCompatActivity() {
     var mAuth: FirebaseAuth? = null
     private val TAG: String = "ForgotPassword"
-    var Fgp_Htxt:TextView?=null
     var FgP_Email: EditText? = null
-    var createAcc : Button? = null
-    var backR : ImageButton? = null
+    var forgot_submit : Button? = null
+    var forgot_back : ImageButton? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
@@ -28,7 +27,7 @@ class ForgotPassword : AppCompatActivity() {
             startActivity(Intent(this@ForgotPassword, MainActivity::class.java))
             finish()
         }
-        createAcc?.setOnClickListener {
+        forgot_submit?.setOnClickListener {
             val email = FgP_Email?.text.toString().trim { it <= ' ' }
 
 
@@ -43,14 +42,13 @@ class ForgotPassword : AppCompatActivity() {
             }
 
 //กรณีกดปุ่ ม Back
-        backR?.setOnClickListener { onBackPressed() }
-    }
 
+    }
+        forgot_back?.setOnClickListener { onBackPressed() }
     }
     fun init(){
         FgP_Email = findViewById(R.id.forgot_emailtxt)
-        Fgp_Htxt = findViewById(R.id.forgot_forgottxt)
-        createAcc = findViewById(R.id.forgot_submitbtn)
-        backR = findViewById(R.id.forgot_backbtn)
+        forgot_submit = findViewById(R.id.forgot_submitbtn)
+        forgot_back = findViewById(R.id.forgot_backbtn)
     }
 }

@@ -18,13 +18,10 @@ class Detail : AppCompatActivity() {
             var intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
-        bkbtn?.setOnClickListener{
-            var intent = Intent(this,DashboardFragment::class.java)
-            startActivity(intent)
-        }
+
     }
     fun init() {
         backbtn = findViewById(R.id.detail_backbtn)
-        bkbtn = findViewById(R.id.detail_bkbtn)
+
     }
 }

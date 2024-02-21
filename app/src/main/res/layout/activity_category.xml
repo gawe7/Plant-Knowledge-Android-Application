@@ -18,10 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:layout_width="330dp"-->
-<!--        android:layout_height="272dp"-->
-<!--        tools:layout_editor_absoluteX="36dp"-->
-<!--        tools:layout_editor_absoluteY="156dp" />-->
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

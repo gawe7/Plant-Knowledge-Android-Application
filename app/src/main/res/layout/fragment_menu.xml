@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.menu.MenuFragment">
 
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/menu_recycleview"-->
+<!--        android:layout_width="367dp"-->
+<!--        android:layout_height="151dp"-->
+<!--        android:layout_marginTop="120dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.363"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

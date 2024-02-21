@@ -12,49 +12,45 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
 class Profile : AppCompatActivity() {
-    lateinit var mAuth: FirebaseAuth
-    lateinit var mAuthListener: FirebaseAuth.AuthStateListener
-    private val TAG:String = "Profile"
-    lateinit var userEmail: TextView
-    lateinit var uidUser : TextView
-    lateinit var singout : Button
-    lateinit var backRe: ImageButton
-
+    var mAuth: FirebaseAuth? = null
+    var mAuthListener: FirebaseAuth.AuthStateListener? = null
+    private val TAG:String = "Result Activity"
+    var userEmail: TextView? = null
+    var uidUser : TextView? = null
+    var singout : Button? = null
+    var backRe: ImageButton? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_profile)
         init()
-
-        // ดึงค่าจาก Firebase มาใส่ใน mAuth
+//ดึงค่าจาก Firebase มาใส่ใน mAuth
         mAuth = FirebaseAuth.getInstance()
         val user = mAuth!!.currentUser
-
-        // นำค่ามาใส่ลงใน TextView ที่สร้างขึ้น
+//นําค่ามาใส่ลงใน TextView ที5สร้างขึIน
+        uidUser?.text = "User : " + user!!.uid
         userEmail?.text ="Email : "+ user!!.email
-        uidUser?.text ="User : "+ user!!.uid
-
         mAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val users = firebaseAuth.currentUser
             if (users == null) {
-                startActivity(Intent(this@Profile, Login::class.java))
+                startActivity(Intent(this@Profile,
+                    Login::class.java))
                 finish()
             }
         }
 
-        // การทำงานของปุ่ม Sign out
+// การทํางานของปุ่ ม Sign out
         singout?.setOnClickListener {
             mAuth!!.signOut()
-            Toast.makeText(this,"ออกจากระบบแล้ว!", Toast.LENGTH_LONG).show()
-            Log.d(TAG, "ออกจากระบบแล้ว!")
-            startActivity(Intent(this@Profile, Login::class.java))
+            Toast.makeText(this,"Signed out!", Toast.LENGTH_LONG).show()
+            Log.d(TAG, "Signed out!")
+            startActivity(Intent(this@Profile,
+                MainActivity::class.java))
             finish()
         }
-
-        // กรณีกดปุ่ม Back
+//กรณีกดปุ่ ม Back
         backRe?.setOnClickListener { onBackPressed() }
     }
-
     override fun onStart() {
         super.onStart()
         mAuth!!.addAuthStateListener { mAuthListener }
@@ -66,7 +62,6 @@ class Profile : AppCompatActivity() {
             mAuth!!.removeAuthStateListener { mAuthListener }
         }
     }
-
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) { moveTaskToBack(true) }
         return super.onKeyDown(keyCode, event)
@@ -75,7 +70,7 @@ class Profile : AppCompatActivity() {
     fun init() {
         userEmail = findViewById(R.id.profile_emailtxt)
         uidUser = findViewById(R.id.profile_usertxt)
-        singout = findViewById(R.id.profile_logout)
-        backRe = findViewById(R.id.Profile_backbtn)
+        singout = findViewById(R.id.profile_setting)
+        backRe = findViewById(R.id.profile_backbtn)
     }
 }

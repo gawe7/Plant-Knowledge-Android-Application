@@ -34,9 +34,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_usertxt" />
 
+
     <Button
-        android:id="@+id/profile_logout"
-        style="color"
+        android:id="@+id/profile_setting"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/Profile_backbtn"
+        android:id="@+id/profile_backbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
