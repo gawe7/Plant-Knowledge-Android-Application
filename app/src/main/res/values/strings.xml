@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">eartheden</string>
+    <string name="app_name">EarthEden</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Bookmark</string>
+    <string name="title_dashboard">My plant</string>
     <string name="title_notifications">FAQ</string>
+    <string name="title_menu">Menu</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="submit">Submit</string>

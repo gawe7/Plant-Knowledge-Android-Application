@@ -37,7 +37,7 @@
             android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".Detail"
@@ -47,7 +47,7 @@
             android:exported="false"
             tools:ignore="DuplicateActivity" />
         <activity
-            android:name=".Login"
+            android:name=".MainActivity"
             android:exported="true"
                                      android:label="@string/app_name">
             <intent-filter>
