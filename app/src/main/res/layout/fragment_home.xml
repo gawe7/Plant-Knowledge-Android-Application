@@ -15,7 +15,20 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/home_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/cardview_shadow_end_color"
+            android:scaleType="fitCenter"
+            android:src="@drawable/eratheden_photoaidcom_cropped"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!--        <Button-->
 <!--        android:id="@+id/profile"-->
@@ -57,7 +70,7 @@
         android:id="@+id/home_recycleview"
         android:layout_width="367dp"
         android:layout_height="151dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="152dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -66,7 +79,7 @@
         android:id="@+id/home_populartxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="Popular"
         android:textColor="#000000"

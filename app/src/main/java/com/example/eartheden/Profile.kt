@@ -45,7 +45,7 @@ class Profile : AppCompatActivity() {
             Toast.makeText(this,"Signed out!", Toast.LENGTH_LONG).show()
             Log.d(TAG, "Signed out!")
             startActivity(Intent(this@Profile,
-                MainActivity::class.java))
+                Login::class.java))
             finish()
         }
 //กรณีกดปุ่ ม Back

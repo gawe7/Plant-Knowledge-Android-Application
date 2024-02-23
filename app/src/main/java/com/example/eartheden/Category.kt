@@ -14,15 +14,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Category : AppCompatActivity() {
     var CateBack: ImageButton?=null
-    private lateinit var binding: ActivityMainBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_category)
         init()
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         CateBack?.setOnClickListener{
             var intent = Intent(this,MainActivity::class.java)

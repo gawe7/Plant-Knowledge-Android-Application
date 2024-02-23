@@ -1,4 +1,4 @@
-package com.example.eartheden.ui.menu
+package com.example.eartheden
 
 class PlantModel (var title: String?, var img: String?) {
     // Default constructor
