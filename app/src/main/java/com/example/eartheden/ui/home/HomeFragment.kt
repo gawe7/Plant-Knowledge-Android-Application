@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import com.example.eartheden.Category
 import com.example.eartheden.Login
 import com.example.eartheden.Profile
 import com.example.eartheden.R
@@ -38,6 +39,12 @@ class HomeFragment : Fragment() {
 //            startActivity(intent)
 //            requireActivity().finish()
 //        }
+        val profile = root.findViewById<Button>(R.id.home_category)
+        profile.setOnClickListener {
+            val intent = Intent(requireContext(), Category::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
         return root
     }
 
