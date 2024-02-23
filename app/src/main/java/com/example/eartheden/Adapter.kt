@@ -5,7 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class Adapter  (val PlantList:List<PlantModel>): RecyclerView.Adapter<ViewHolder>(){
+class Adapter
+    (val PlantList:List<PlantModel>): RecyclerView.Adapter<ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.model, parent ,false))
     }
