@@ -39,8 +39,9 @@ class HomeFragment : Fragment() {
 //            startActivity(intent)
 //            requireActivity().finish()
 //        }
-        val profile = root.findViewById<Button>(R.id.home_category)
-        profile.setOnClickListener {
+
+        val home_category = root.findViewById<Button>(R.id.home_category)
+        home_category.setOnClickListener {
             val intent = Intent(requireContext(), Category::class.java)
             startActivity(intent)
             requireActivity().finish()

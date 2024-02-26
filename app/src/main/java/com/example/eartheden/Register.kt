@@ -1,6 +1,5 @@
 package com.example.eartheden
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -23,7 +22,6 @@ class Register : AppCompatActivity() {
     private var register_edit_email: EditText? = null
     private var register_edit_password: EditText? = null
     private var register_edit_repassword: EditText? = null
-    private var register_text: EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -138,6 +136,5 @@ class Register : AppCompatActivity() {
         register_edit_password = findViewById(R.id.register_passtxt)
         register_edit_repassword = findViewById(R.id.register_confirmpasstxt)
         register_button_back = findViewById(R.id.register_backbtn)
-        register_text = findViewById(R.id.register_regtxt)
     }
 }

@@ -7,10 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.eartheden.Category
 import com.example.eartheden.Login
+import com.example.eartheden.Profile
 import com.example.eartheden.R
 import com.example.eartheden.databinding.FragmentMenuBinding
 import com.example.eartheden.databinding.FragmentNotificationsBinding
@@ -32,11 +35,18 @@ class MenuFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
+        val MenuViewModel =
             ViewModelProvider(this).get(MenuViewModel::class.java)
 
         _binding = FragmentMenuBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        val menu_profilemore = root.findViewById<ImageButton>(R.id.menu_profilemore)
+        menu_profilemore.setOnClickListener {
+            val intent = Intent(requireContext(), Profile::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
 
 
         return root
