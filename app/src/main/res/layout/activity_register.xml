@@ -25,9 +25,9 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="85dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="76dp"
-        android:background="@drawable/greenbg"
+        android:background="@drawable/greenss"
         android:ems="10"
         android:hint="Username"
         android:inputType="text"
@@ -36,6 +36,56 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_regtxt" />
+
+    <EditText
+        android:id="@+id/register_passtxt"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="76dp"
+        android:background="@drawable/greenss"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_emailtxt" />
+
+    <EditText
+        android:id="@+id/register_emailtxt"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="76dp"
+        android:background="@drawable/greenss"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="text"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_usernametxt" />
+
+    <EditText
+        android:id="@+id/register_confirmpasstxt"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="76dp"
+        android:background="@drawable/greenss"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_passtxt" />
 
     <Button
         android:id="@+id/register_submitbtn"
@@ -51,53 +101,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_confirmpasstxt" />
-
-    <EditText
-        android:id="@+id/register_confirmpasstxt"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="76dp"
-        android:background="@drawable/greenbg"
-        android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_passtxt" />
-
-    <EditText
-        android:id="@+id/register_passtxt"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="76dp"
-        android:background="@drawable/greenbg"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_emailtxt" />
-
-    <EditText
-        android:id="@+id/register_emailtxt"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="76dp"
-        android:background="@drawable/greenbg"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="text"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_usernametxt" />
 
     <TextView
         android:id="@+id/register_regtxt"

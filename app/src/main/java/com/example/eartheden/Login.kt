@@ -19,6 +19,7 @@ class Login : AppCompatActivity() {
     var login_edit_password: EditText? = null
     var login_button_login: Button? = null
     var login_button_create: Button? = null
+    var login_button_forgot: Button? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -81,11 +82,16 @@ class Login : AppCompatActivity() {
             startActivity(Intent(this@Login, Register::class.java))
         }
 
+        login_button_forgot?.setOnClickListener {
+            startActivity(Intent(this@Login, ForgotPassword::class.java))
+        }
+
     }
     fun init() {
         login_edit_email = findViewById(R.id.login_emailtxt)
         login_edit_password = findViewById(R.id.login_passwordtxt)
         login_button_login = findViewById(R.id.login_loginBtn)
         login_button_create = findViewById(R.id.login_registerBtn)
+        login_button_forgot = findViewById(R.id.login_forgotBtn)
     }
 }

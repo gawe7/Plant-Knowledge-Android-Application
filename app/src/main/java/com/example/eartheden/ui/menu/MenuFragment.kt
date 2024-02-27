@@ -35,8 +35,8 @@ class MenuFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val MenuViewModel =
-            ViewModelProvider(this).get(MenuViewModel::class.java)
+//        val MenuViewModel =
+//            ViewModelProvider(this).get(MenuViewModel::class.java)
 
         _binding = FragmentMenuBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -45,8 +45,14 @@ class MenuFragment : Fragment() {
         menu_profilemore.setOnClickListener {
             val intent = Intent(requireContext(), Profile::class.java)
             startActivity(intent)
-            requireActivity().finish()
         }
+
+//        val menu_faqmore = root.findViewById<ImageButton>(R.id.menu_faqmore)
+//        menu_faqmore.setOnClickListener {
+//            val intent = Intent(requireContext(), Faq::class.java)
+//            startActivity(intent)
+//        }
+
 
 
         return root
