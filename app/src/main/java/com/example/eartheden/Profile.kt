@@ -44,8 +44,7 @@ class Profile : AppCompatActivity() {
             mAuth!!.signOut()
             Toast.makeText(this,"Signed out!", Toast.LENGTH_LONG).show()
             Log.d(TAG, "Signed out!")
-            startActivity(Intent(this@Profile,
-                Login::class.java))
+            startActivity(Intent(this@Profile,Login::class.java))
             finish()
         }
 //กรณีกดปุ่ ม Back

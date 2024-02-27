@@ -3,7 +3,6 @@ package com.example.eartheden
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,7 +28,8 @@ class Category : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCategoryBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val view = binding.root
+        setContentView(view)
         supportActionBar?.hide()
 
         init()
@@ -42,8 +42,7 @@ class Category : AppCompatActivity() {
         database = FirebaseDatabase.getInstance("https://eartheden-9818d-default-rtdb.asia-southeast1.firebasedatabase.app")
 
 
-        recyclerViewCate.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerViewCate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         databaseReferenceCactus = database.getReference("cactus")
         responseCate = mutableListOf()
         cateAdapter = CateAdapter(responseCate as ArrayList<CateModel>)
@@ -52,7 +51,11 @@ class Category : AppCompatActivity() {
 
 
 
-        category_backbtn?.setOnClickListener { onBackPressed() }
+        category_backbtn?.setOnClickListener {
+                var intent = Intent(this,MainActivity::class.java)
+                startActivity(intent)
+
+        }
     }
 
 
