@@ -24,6 +24,8 @@ import com.google.firebase.ktx.Firebase
 //setting
 class MenuFragment : Fragment() {
 
+
+
     private var _binding: FragmentMenuBinding? = null
 
     // This property is only valid between onCreateView and
@@ -35,6 +37,11 @@ class MenuFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+
+
+        // Set onClickListener to the logout button
+
 //        val MenuViewModel =
 //            ViewModelProvider(this).get(MenuViewModel::class.java)
 

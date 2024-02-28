@@ -50,7 +50,8 @@ class Register : AppCompatActivity() {
                             val databaseReference = database.getReference("Account").child(email.replace(".", ","))
                             val userData = hashMapOf(
                                 "User name" to user,
-                                "Email" to email
+                                "Email" to email,
+                                "Password" to pass
                             )
                             userId?.let { uid ->
                                 databaseReference.setValue(userData)
