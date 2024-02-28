@@ -31,28 +31,40 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
     <Button
         android:id="@+id/home_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
-        android:layout_marginTop="154dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="137dp"
         android:text="category "
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_recycleview" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/home_recycleview"
-        android:layout_width="367dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="152dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/home_containheader">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/cate_Htxt"

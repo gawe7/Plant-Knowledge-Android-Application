@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.eartheden.Category
+import com.example.eartheden.Faq
 import com.example.eartheden.Login
 import com.example.eartheden.Profile
 import com.example.eartheden.R
@@ -54,11 +55,11 @@ class MenuFragment : Fragment() {
             startActivity(intent)
         }
 
-//        val menu_faqmore = root.findViewById<ImageButton>(R.id.menu_faqmore)
-//        menu_faqmore.setOnClickListener {
-//            val intent = Intent(requireContext(), Faq::class.java)
-//            startActivity(intent)
-//        }
+        val menu_faqmore = root.findViewById<ImageButton>(R.id.menu_faqmore)
+        menu_faqmore.setOnClickListener {
+            val intent = Intent(requireContext(), Faq::class.java)
+            startActivity(intent)
+        }
 
 
 

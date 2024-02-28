@@ -49,13 +49,13 @@ class MainActivity : AppCompatActivity() {
 */
 
         val navView: BottomNavigationView = binding.navView
-
-        val main_catebtn: ImageButton = findViewById(R.id.main_catebtn)
-
-        main_catebtn.setOnClickListener {
-            var intent = Intent(this, Category::class.java)
-            startActivity(intent)
-        }
+//
+//        val main_catebtn: ImageButton = findViewById(R.id.main_catebtn)
+//
+//        main_catebtn.setOnClickListener {
+//            var intent = Intent(this, Category::class.java)
+//            startActivity(intent)
+//        }
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(
