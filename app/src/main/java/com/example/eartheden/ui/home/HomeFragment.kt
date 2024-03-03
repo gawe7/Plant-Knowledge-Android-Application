@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -44,7 +43,7 @@ class HomeFragment : Fragment() {
 
         mAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance("https://eartheden-9818d-default-rtdb.asia-southeast1.firebasedatabase.app")
-        databaseReferenceCactus = database.getReference("cactus")
+        databaseReferenceCactus = database.getReference("Notification")
 
         responseHome = mutableListOf()
         adapter = CateAdapter(responseHome as ArrayList<CateModel>)
