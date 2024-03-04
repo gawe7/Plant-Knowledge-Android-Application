@@ -11,5 +11,7 @@
     <string name="setting">Setting</string>
     <string name="user_email">Email: </string>
     <string name="user_id">User: </string>
+    <string name="start">Start</string>
+    <string name="pause">Pause</string>
 
 </resources>
