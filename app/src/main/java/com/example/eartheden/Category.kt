@@ -52,8 +52,8 @@ class Category : AppCompatActivity() {
 
 
         category_backbtn?.setOnClickListener {
-                var intent = Intent(this,MainActivity::class.java)
-                startActivity(intent)
+            var intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
 
         }
     }
