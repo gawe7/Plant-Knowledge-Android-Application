@@ -8,7 +8,7 @@ import com.example.eartheden.NotiModel
 import com.example.eartheden.R
 import com.squareup.picasso.Picasso
 
-class NotiAdapter(private val plantList: ArrayList<NotiModel>): RecyclerView.Adapter<ViewHolder>() {
+ class NotiAdapter(private val plantList: ArrayList<NotiModel>): RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.detailmodel, parent, false)
         return ViewHolder(view)

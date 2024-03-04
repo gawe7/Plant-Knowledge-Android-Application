@@ -1,6 +1,5 @@
 package com.example.eartheden
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import com.example.eartheden.Detail
-import com.example.eartheden.DetailModel
-import com.example.eartheden.R
 
 class DetailModelAdapter(private val data: List<DetailModel>) :
     RecyclerView.Adapter<DetailModelAdapter.ViewHolder>() {

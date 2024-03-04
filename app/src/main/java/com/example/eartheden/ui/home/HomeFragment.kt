@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
 
         mAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance("https://eartheden-9818d-default-rtdb.asia-southeast1.firebasedatabase.app")
-        databaseReferenceCactus = database.getReference("Notification")
+        databaseReferenceCactus = database.getReference("Popular")
 
         responseHome = mutableListOf()
         adapter = CateAdapter(responseHome as ArrayList<CateModel>)

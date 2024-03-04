@@ -17,9 +17,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="130dp"
-            android:layout_height="170dp"
-
+            android:layout_width="150dp"
+            android:layout_height="200dp"
             android:background="@drawable/imgloading"
             android:scaleType="centerCrop" />
 
@@ -27,20 +26,22 @@
             android:id="@+id/textTitleItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
+            android:layout_margin="5dp"
             android:text=""
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-condensed-medium"/>
 
         <Button
             android:id="@+id/buttonConnect"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:text="View More"
             android:background="@drawable/greenac"
             android:textColor="#000000"
-            android:textColorHint="#000000" />
+            android:textColorHint="#000000"
+            android:fontFamily="sans-serif-condensed-medium"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eartheden.databinding.ActivityCategoryBinding
@@ -42,8 +43,14 @@ class Category : AppCompatActivity() {
         database = FirebaseDatabase.getInstance("https://eartheden-9818d-default-rtdb.asia-southeast1.firebasedatabase.app")
 
 
-        recyclerViewCate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        databaseReferenceCactus = database.getReference("cactus")
+
+        // ตั้งค่า LayoutManager เป็น GridLayoutManager
+        val spanCount = 3 // จำนวนคอลัมน์ใน grid
+        val layoutManager = GridLayoutManager(this, spanCount)
+        recyclerViewCate.layoutManager = layoutManager
+
+//        recyclerViewCate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        databaseReferenceCactus = database.getReference("category")
         responseCate = mutableListOf()
         cateAdapter = CateAdapter(responseCate as ArrayList<CateModel>)
         recyclerViewCate.adapter = cateAdapter

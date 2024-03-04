@@ -7,53 +7,37 @@
     tools:context=".ui.menu.MenuFragment">
 
 
-    <Button
-        android:id="@+id/menu_logoutbtn"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="272dp"
-        android:background="@drawable/greenbg"
-        android:text="Logout"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--    <Button-->
+    <!--        android:id="@+id/menu_logoutbtn"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginTop="272dp"-->
+    <!--        android:background="@drawable/greenbg"-->
+    <!--        android:text="Logout"-->
+    <!--        android:textColor="#000000"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.498"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
-        android:id="@+id/profile_emailtxt"
+        android:id="@+id/menu_usertxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:hint="surname"
         android:text=""
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.369"
-        app:layout_constraintStart_toEndOf="@+id/profile_usertxt"
-        app:layout_constraintTop_toBottomOf="@+id/menu_containheader" />
-
-    <TextView
-        android:id="@+id/profile_usertxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="176dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:hint="name"
-        android:text=""
-        android:textColor="#000000"
-        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menu_containheader" />
+        app:layout_constraintTop_toBottomOf="@+id/menu_profile" />
 
     <ImageView
         android:id="@+id/menu_profile"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="120dp"
         android:background="@drawable/news_removebg_preview"
         android:src="@drawable/news_removebg_preview"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,15 +71,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu_menucontainheader"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/greenbg"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/whitegborder"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menu_logoutbtn"
+        app:layout_constraintTop_toBottomOf="@+id/menu_usertxt"
         tools:ignore="MissingConstraints">
 
         <ImageButton
@@ -116,9 +99,8 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-condensed-medium"
-            android:hint="Profile"
-            android:text=""
-            android:textColor="#000000"
+            android:text="Profile"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -128,14 +110,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu_menucontainheader2"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="55dp"
-        android:background="@drawable/greenbg"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/whitegborder"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_menucontainheader"
         tools:ignore="MissingConstraints">
@@ -147,9 +128,8 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-condensed-medium"
-            android:hint="FAQ"
-            android:text=""
-            android:textColor="#000000"
+            android:text="FAQ"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

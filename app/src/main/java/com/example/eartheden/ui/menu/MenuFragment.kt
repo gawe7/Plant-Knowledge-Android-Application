@@ -61,6 +61,18 @@ class MenuFragment : Fragment() {
             startActivity(intent)
         }
 
+//        // Get the current user
+//        val currentUser = FirebaseAuth.getInstance().currentUser
+//
+//        // Check if user is signed in
+//        if (currentUser != null) {
+//            // Get user's display name
+//            val user = currentUser.displayName
+//
+//            // Update UI with user's name
+//            binding.menuUsertxt.text = user
+//        }
+
 
 
         return root
