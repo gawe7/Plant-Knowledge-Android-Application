@@ -53,8 +53,8 @@
     <Button
         android:id="@+id/login_registerBtn"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="106dp"
-        android:layout_height="47dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="4dp"
         android:text="Register"
@@ -86,8 +86,8 @@
     <Button
         android:id="@+id/login_forgotBtn"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="150dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="forgot password?"
         android:textColor="#000000"
