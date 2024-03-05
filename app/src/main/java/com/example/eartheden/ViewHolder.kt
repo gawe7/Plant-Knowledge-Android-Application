@@ -7,6 +7,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
 class ViewHolder (View: View) : RecyclerView.ViewHolder(View){
+    val cardview: CardView = View.findViewById(R.id.cardView)
     var textTitleItem: TextView = View.findViewById(R.id.textTitleItem)
     var imageView: ImageView = View.findViewById(R.id.imageView)
 

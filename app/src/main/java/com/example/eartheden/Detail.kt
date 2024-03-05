@@ -2,178 +2,154 @@ package com.example.eartheden
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.CountDownTimer
-import android.widget.Button
+import android.util.Log
+import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.eartheden.databinding.ActivityDetailBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.ChildEventListener
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
-import java.util.Locale
 
 class Detail : AppCompatActivity() {
 
-        lateinit var textContenttitle: TextView
-        lateinit var imageViewContent: ImageView
-        lateinit var textContentDetail: TextView
-        lateinit var firebaseAuth: FirebaseAuth
-        lateinit var firebaseDatabase: FirebaseDatabase
-        lateinit var content_textview_contact: TextView
-
-        private lateinit var databaseReferenceCactus: DatabaseReference
-        private lateinit var responseDetail: MutableList<DetailModel>
-        private var DetailAdapter: DetailAdapter? = null
-        lateinit var backbtn: ImageButton
-
-        //time
-        private val START_TIME_IN_MILLIS = 259200000L // 3 วัน = 72 * 60 * 60
-
-    private lateinit var textViewCountDown: TextView
-    private lateinit var buttonStartPause: Button
-    private lateinit var buttonReset: Button
-
-    private var mCountDownTimer: CountDownTimer? = null
-
-    private var mTimerRunning = false
-
-    private var mTimeLeftInMillis = START_TIME_IN_MILLIS
+    private lateinit var binding: ActivityDetailBinding
+    private lateinit var textContentTitle: TextView
+    private lateinit var imageViewContent: ImageView
+    private lateinit var textContentDetail: TextView
+    private lateinit var firebaseDatabase: FirebaseDatabase
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var databaseReference: DatabaseReference
+    private var backbtn: ImageButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            supportActionBar?.hide()
-            setContentView(R.layout.activity_detail)
+        super.onCreate(savedInstanceState)
+
+        // Initialize View binding for safer and cleaner access to views
+        binding = ActivityDetailBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        supportActionBar?.hide()
+
+        // Initialize views after view inflation
+        textContentTitle = binding.detailTitle // Use findViewById when not using ViewBinding
+        textContentDetail = binding.detailDesc
+        backbtn = findViewById(R.id.detail_backbtn)
+        imageViewContent = findViewById(R.id.detailImage)
+
+        // Initialize Firebase instances
+        mAuth = FirebaseAuth.getInstance()
+        firebaseDatabase = FirebaseDatabase.getInstance("https://eartheden-9818d-default-rtdb.asia-southeast1.firebasedatabase.app")
+
+        // Get key from intent and handle potential null case
+        val getkey = intent.getStringExtra("key")
+        if (getkey != null) {
+            // Access data from "home" and "category" sequentially
+            fetchDataFromHome(getkey)
+            fetchDataFromCategory(getkey)
+        } else {
+            Log.e("Detail", "Missing key in intent")
+            // Handle the case where the key is missing (e.g., show an error message)
+        }
+
+        // Back button click listener
+        backbtn?.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+    }
 
 
-            textContenttitle = findViewById(R.id.detailTitle)
-            imageViewContent = findViewById(R.id.detailImage)
-            textContentDetail = findViewById(R.id.detailPriority)
-            content_textview_contact = findViewById(R.id.detailDesc)
+    private fun fetchDataFromHome(getkey: String) {
+        val databaseReference = firebaseDatabase.getReference("category/$getkey").child("c0")
 
-            firebaseAuth = FirebaseAuth.getInstance()
-            firebaseDatabase = FirebaseDatabase.getInstance()
-
-            var intent = intent
-            var getkey = intent.getStringExtra("key")
-            var databaseReference = firebaseDatabase.getReference("home/$getkey")
-
-        //time
-        textViewCountDown = findViewById(R.id.text_view_countdown)
-        buttonReset = findViewById(R.id.button_reset)
-
-            databaseReference.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    textContenttitle.text = snapshot.child("title").value.toString()
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    textContentTitle.text = snapshot.child("title").value.toString()
                     textContentDetail.text = snapshot.child("detail").value.toString()
-                    Picasso.get().load(snapshot.child("Image").value.toString())
-                        .error(R.drawable.imgloading)
-                        .placeholder(R.drawable.imgloading)
-                        .into(imageViewContent)
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                }
-            })
-            backbtn?.setOnClickListener {
-                var intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            }
-        }
-
-        private fun onBindingFirebase() {
-            databaseReferenceCactus.addChildEventListener(object : ChildEventListener {
-                override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
-                    val detailModel = snapshot.getValue(DetailModel::class.java)
-                    detailModel?.let {
-                        responseDetail.add(DetailModel())
-                        DetailAdapter!!.notifyDataSetChanged()
+                    val imageUrl = snapshot.child("img").value.toString()
+                    if (!imageUrl.isNullOrEmpty()) {
+                        Glide.with(this@Detail)
+                            .load(imageUrl)
+                            .into(imageViewContent)
+                    } else {
+                        imageViewContent.setImageResource(R.drawable.imgloading)
                     }
-                }
-
-                override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
-                    // Handle onChildChanged
-                }
-
-                override fun onChildRemoved(snapshot: DataSnapshot) {
-                    // Handle onChildRemoved
-                }
-
-                override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
-                    // Handle onChildMoved
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    // Handle onCancelled
-                }
-            })
-            //time
-            buttonStartPause.setOnClickListener {
-                if (mTimerRunning) {
-                    pauseTimer()
                 } else {
-                    startTimer()
+                    Log.w("Detail", "No data found in home for key: $getkey")
                 }
             }
 
-            buttonReset.setOnClickListener {
-                resetTimer()
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@Detail, "Failed to read from home.", Toast.LENGTH_SHORT).show()
             }
-
-            updateCountDownText()
-            startTimer() // เพิ่มการเรียกใช้ startTimer()
-        }
-
-    private fun startTimer() {
-        mCountDownTimer = object : CountDownTimer(mTimeLeftInMillis, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                mTimeLeftInMillis = millisUntilFinished
-                updateCountDownText()
-            }
-
-            override fun onFinish() {
-                mTimerRunning = false
-                buttonStartPause.text = getString(R.string.start)
-                buttonStartPause.isVisible = false
-                buttonReset.isVisible = true
-            }
-        }.start()
-
-        mTimerRunning = true
-        buttonStartPause.text = getString(R.string.pause)
-        buttonReset.isVisible = false
+        })
     }
 
-   private fun pauseTimer() {
-        mCountDownTimer?.cancel()
-        mTimerRunning = false
-        buttonStartPause.text = getString(R.string.start)
-        buttonReset.isVisible = true
+    private fun fetchDataFromCategory(getkey: String) {
+        this.databaseReference =
+            firebaseDatabase.getReference("category/$getkey")
+        // ... (Implement logic for interacting with data from "category")
+    }
+}
+
+  /*  if (getkey != null)
+    {
+        // Initialize databaseReference
+        firebaseDatabase =
+            FirebaseDatabase.getInstance("https://eartheden-9818d-default-rtdb.asia-southeast1.firebasedatabase.app")
+        this@Detail.databaseReference =
+            firebaseDatabase.getReference("category/$getkey")
+    } else
+    {
+        // Handle case where key is not available (e.g., show error message)
+        Log.e("Detail", "Missing key in intent")
     }
 
-    private fun resetTimer() {
-        mTimeLeftInMillis = START_TIME_IN_MILLIS
-        updateCountDownText()
-        buttonReset.isVisible = false
-        buttonStartPause.isVisible = true
-    }
+    // Back button click listener (move initialization to onCreate)
+    backbtn = findViewById(R.id.detail_backbtn) // Replace with actual ID
+    backbtn?.setOnClickListener
+    {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }*/
 
-    private fun updateCountDownText() {
-        val minutes = (mTimeLeftInMillis / 1000) / 60
-        val seconds = (mTimeLeftInMillis / 1000) % 60
 
-        val timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds)
-        textViewCountDown.text = timeLeftFormatted
-    }
+/* var databaseReference = firebaseDatabase.getReference("catagory/$getkey")
+ /* // rebase data retrieval
+  databaseReference.addValueEventListener(object : ValueEventListener {
+      override fun onDataChange(snapshot: DataSnapshot) {
+          if (snapshot.exists()) {
+              textContenttitle.text = snapshot.child("title").value.toString()
+              val detailValue = snapshot.child("detail").value
+              if (detailValue is String) {
+                  textContentDetail.text = detailValue.toString()
+              } else {
+                  Log.w("Detail", "Unexpected data type for detail: ${detailValue?.javaClass}")
+              }
+              Picasso.get().load(snapshot.child("img").value.toString())
+                  .error(R.drawable.imgloading)
+                  .placeholder(R.drawable.imgloading)
+                  .into(imageViewContent)
+          } else {
+              // Handle case where data doesn't exist at the provided key (e.g., show error message)
+              Log.w("Detail", "No data found at key: $getkey")
+          }
+      }
 
-        fun init() {
-            backbtn = findViewById(R.id.detail_backbtn)
+      override fun onCancelled(error: DatabaseError) {
+          Toast.makeText(this@Detail, "Failed to read Detail.", Toast.LENGTH_SHORT).show()
+      }*/
 
-        }
-    }
+*/
+
+
+

@@ -1,62 +1,39 @@
 package com.example.eartheden
 
-
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.squareup.picasso.Picasso
 
-class DetailAdapter(private val context: Allplant, private var dataList: List<DetailModel>) : RecyclerView.Adapter<MyViewHolder>() {
+class DetailAdapter(val cateList: ArrayList<DetailModel>):RecyclerView.Adapter<ViewHolder>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.recycler_item, parent, false)
-        return MyViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.model, parent ,false))
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        Glide.with(context).load(dataList[position].dataImage)
-            .into(holder.recImage)
-        holder.recTitle.text = dataList[position].dataTitle
-        holder.recDesc.text = dataList[position].dataDesc
-        holder.recPriority.text = dataList[position].dataPriority
 
-        holder.recCard.setOnClickListener {
-            val intent = Intent(context, Detail::class.java)
-            intent.putExtra("Image", dataList[holder.adapterPosition].dataImage)
-            intent.putExtra("Description", dataList[holder.adapterPosition].dataDesc)
-            intent.putExtra("Title", dataList[holder.adapterPosition].dataTitle)
-            intent.putExtra("Priority", dataList[holder.adapterPosition].dataPriority)
-            context.startActivity(intent)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val dataModel = cateList[position]
+        holder.textTitleItem.text = dataModel.title
+        Picasso.get().load(dataModel.img)
+            .error(R.drawable.imgloading)
+            .placeholder(R.drawable.imgloading)
+            .into(holder.imageView)
+
+        holder.cardview.setOnClickListener{
+            val intent = Intent(holder.itemView.context, Detail::class.java)
+            intent.putExtra("key", dataModel.key) // ส่ง key ของโพสไปยัง ContentActivityhome
+            holder.itemView.context.startActivity(intent)
         }
 
     }
 
+
     override fun getItemCount(): Int {
-        return dataList.size
+        return cateList.size
     }
-    fun searchDataList(searchList: List<DetailModel>) {
-        dataList = searchList
-        notifyDataSetChanged()
-    }
-}
 
-class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    var recImage: ImageView
-    var recTitle: TextView
-    var recDesc: TextView
-    var recPriority: TextView
-    var recCard: CardView
 
-    init {
-        recImage = itemView.findViewById(R.id.recImage)
-        recTitle = itemView.findViewById(R.id.recTitle)
-        recDesc = itemView.findViewById(R.id.recDesc)
-        recPriority = itemView.findViewById(R.id.recPriority)
-        recCard = itemView.findViewById(R.id.recCard)
-    }
 }

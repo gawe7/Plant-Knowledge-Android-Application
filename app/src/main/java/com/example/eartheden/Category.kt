@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eartheden.databinding.ActivityCategoryBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -21,7 +20,7 @@ class Category : AppCompatActivity() {
     private lateinit var recyclerViewCate: RecyclerView
     private lateinit var mAuth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
-    private lateinit var databaseReferenceCactus: DatabaseReference
+    private lateinit var databaseReference: DatabaseReference
     private lateinit var responseCate: MutableList<CateModel>
     private var cateAdapter: CateAdapter? = null
     private var category_backbtn: ImageButton? = null
@@ -50,7 +49,7 @@ class Category : AppCompatActivity() {
         recyclerViewCate.layoutManager = layoutManager
 
 //        recyclerViewCate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        databaseReferenceCactus = database.getReference("category")
+        databaseReference = database.getReference("category")
         responseCate = mutableListOf()
         cateAdapter = CateAdapter(responseCate as ArrayList<CateModel>)
         recyclerViewCate.adapter = cateAdapter
@@ -69,7 +68,7 @@ class Category : AppCompatActivity() {
 
 
     private fun onBindingFirebase() {
-        databaseReferenceCactus.addChildEventListener(object : ChildEventListener {
+        databaseReference.addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 responseCate.add(snapshot.getValue(CateModel::class.java)!!)
                 cateAdapter!!.notifyDataSetChanged()

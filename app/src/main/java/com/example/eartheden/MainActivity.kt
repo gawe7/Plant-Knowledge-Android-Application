@@ -23,13 +23,13 @@ import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
-  //  private lateinit var recyclerViewHome:RecyclerView
-    //private lateinit var mAuth: FirebaseAuth
-  //  private lateinit var database: FirebaseDatabase
-   // private lateinit var databaseReferenceCactus: DatabaseReference
-   // private lateinit var responseHome:MutableList<PlantModel>
-   // private var HomeAdapter:Adapter? = null
+/*
+    private lateinit var recyclerViewHome:RecyclerView
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
+    private lateinit var databaseReferenceCactus: DatabaseReference
+    private lateinit var responseHome:MutableList<PlantModel>
+    private var HomeAdapter:Adapter? = null*/
     
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,16 +37,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
-
-        /*mAuth = FirebaseAuth.getInstance()
+/*
+        mAuth = FirebaseAuth.getInstance()
 
         database = FirebaseDatabase.getInstance("https://eartheden-9818d-default-rtdb.asia-southeast1.firebasedatabase.app")
 
         recyclerViewHome.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         databaseReferenceCactus = database.getReference("cactus")
         responseHome = mutableListOf()
-        HomeAdapter = Adapter(responseHome as ArrayList<PlantModel>)
-*/
+        HomeAdapter = Adapter(responseHome as ArrayList<PlantModel>)*/
+
 
         val navView: BottomNavigationView = binding.navView
 //
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
-   /* private fun onBindingFirebase() {
+    /*private fun onBindingFirebase() {
         databaseReferenceCactus.addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 responseHome.add(snapshot.getValue(PlantModel::class.java)!!)
