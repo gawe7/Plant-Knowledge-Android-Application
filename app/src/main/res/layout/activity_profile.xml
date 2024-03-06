@@ -27,40 +27,37 @@
         android:layout_marginEnd="10dp"
         android:background="@drawable/whitegborder"
         android:layout_margin="20dp"
-        android:padding="10dp"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_setting">
 
-        <TextView
-            android:id="@+id/profile_usertxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="23dp"
-            android:layout_marginBottom="19dp"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/user"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/profile_emailtxt"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--        <TextView-->
+<!--            android:id="@+id/profile_usertxt"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="23dp"-->
+<!--            android:layout_marginBottom="19dp"-->
+<!--            android:fontFamily="sans-serif-condensed-medium"-->
+<!--            android:text="@string/user"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/profile_emailtxt"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
         <TextView
             android:id="@+id/profile_emailtxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Email : "
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_usertxt" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -89,6 +86,7 @@
         android:textColor="#000000"
         android:padding="10dp"
         android:textSize="15dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

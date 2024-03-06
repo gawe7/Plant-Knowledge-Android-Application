@@ -7,37 +7,50 @@
     tools:context=".ui.menu.MenuFragment">
 
 
-    <!--    <Button-->
-    <!--        android:id="@+id/menu_logoutbtn"-->
-    <!--        android:layout_width="100dp"-->
-    <!--        android:layout_height="50dp"-->
-    <!--        android:layout_marginTop="272dp"-->
-    <!--        android:background="@drawable/greenbg"-->
-    <!--        android:text="Logout"-->
-    <!--        android:textColor="#000000"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.498"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+<!--    <Button-->
+<!--        android:id="@+id/menu_logoutbtn"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:background="@drawable/greenbg"-->
+<!--        android:text="Logout"-->
+<!--        android:textColor="#000000"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/menu_menucontainheader3" />-->
 
 <!--    <TextView-->
-<!--        android:id="@+id/menu_usertxt"-->
+<!--            android:id="@+id/menu_usertxt"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:fontFamily="sans-serif-condensed-medium"-->
+<!--            android:text=""-->
+<!--            android:textColor="#000000"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/menu_profile" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/menu_emailtxt"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginTop="10dp"-->
 <!--        android:fontFamily="sans-serif-condensed-medium"-->
 <!--        android:text=""-->
 <!--        android:textColor="#000000"-->
 <!--        android:textSize="20sp"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/menu_profile" />-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/menu_usertxt" />-->
 
     <ImageView
         android:id="@+id/menu_profile"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/news_removebg_preview"
         android:src="@drawable/news_removebg_preview"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,13 +84,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu_menucontainheader"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/whitegborder"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_profile"
         tools:ignore="MissingConstraints">
@@ -98,7 +111,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Profile"
             android:textColor="@color/black"
@@ -106,14 +118,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.521" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu_menucontainheader2"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
         android:background="@drawable/whitegborder"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +139,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="FAQ"
             android:textColor="@color/black"
@@ -135,7 +146,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.521" />
 
         <ImageButton
             android:id="@+id/menu_faqmore"
@@ -151,9 +162,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu_menucontainheader3"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
         android:background="@drawable/whitegborder"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -167,7 +178,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Night Mode"
             android:textColor="@color/black"
@@ -175,12 +185,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.521" />
 
         <Switch
             android:id="@+id/night_mode_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:checked="false"
             android:thumbTint="@color/darkgreen"
             android:trackTint="@color/darkgreen"
