@@ -66,7 +66,12 @@ class HomeFragment : Fragment() {
             startActivity(intent)
             requireActivity().finish()
         }
-
+        var news = binding.homeNews
+        news.setOnClickListener {
+            val intent = Intent(requireContext(), news::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
         return view
     }
 
