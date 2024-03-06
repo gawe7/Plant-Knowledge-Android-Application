@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eartheden.CateAdapter
 import com.example.eartheden.CateModel
 import com.example.eartheden.Category
+import com.example.eartheden.Guide
 import com.example.eartheden.R
 
 import com.example.eartheden.databinding.FragmentHomeBinding
@@ -54,6 +56,13 @@ class HomeFragment : Fragment() {
         val cate = binding.homeCategory
         cate.setOnClickListener {
             val intent = Intent(requireContext(), Category::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
+        val guide = binding.homeGuide
+        guide.setOnClickListener {
+            val intent = Intent(requireContext(), Guide::class.java)
             startActivity(intent)
             requireActivity().finish()
         }
