@@ -42,7 +42,6 @@ class Allplant : AppCompatActivity() {
 
         textContenttitle = findViewById(R.id.recTitle)
         imageViewContent = findViewById(R.id.recImage)
-        textContentDetail = findViewById(R.id.recPriority)
         content_textview_contact = findViewById(R.id.recDesc)
 
 

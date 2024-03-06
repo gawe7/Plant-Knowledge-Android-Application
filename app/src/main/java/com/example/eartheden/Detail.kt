@@ -21,8 +21,11 @@ class Detail : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
     private lateinit var textContentTitle: TextView
+    private lateinit var textContentDisease: TextView
     private lateinit var imageViewContent: ImageView
     private lateinit var textContentDetail: TextView
+    private lateinit var textContentCare: TextView
+
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var mAuth: FirebaseAuth
     private lateinit var databaseReference: DatabaseReference
@@ -41,6 +44,8 @@ class Detail : AppCompatActivity() {
         // Initialize views after view inflation
         textContentTitle = binding.detailTitle // Use findViewById when not using ViewBinding
         textContentDetail = binding.detailDesc
+        textContentDisease = binding.detailDisease
+        textContentCare = binding.detailCare
         backbtn = findViewById(R.id.detail_backbtn)
         imageViewContent = findViewById(R.id.detailImage)
 
@@ -75,6 +80,8 @@ class Detail : AppCompatActivity() {
                 if (snapshot.exists()) {
                     textContentTitle.text = snapshot.child("title").value.toString()
                     textContentDetail.text = snapshot.child("detail").value.toString()
+                    textContentDisease.text = snapshot.child("disease").value.toString()
+                    textContentCare.text = snapshot.child("care").value.toString()
                     val imageUrl = snapshot.child("img").value.toString()
                     if (!imageUrl.isNullOrEmpty()) {
                         Glide.with(this@Detail)

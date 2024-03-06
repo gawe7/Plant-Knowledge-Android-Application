@@ -55,7 +55,7 @@
         tools:layout_editor_absoluteY="120dp" >
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewAllplant"
+            android:id="@+id/recyclerViewMyplant"
             android:layout_width="match_parent"
             android:layout_height="526dp"
             android:layout_alignParentTop="true"
